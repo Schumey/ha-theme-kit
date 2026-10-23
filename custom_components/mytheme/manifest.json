@@ -1,0 +1,13 @@
+{
+  "domain": "mytheme",
+  "name": "My Theme",
+  "codeowners": ["@YOURNAME"],
+  "config_flow": true,
+  "dependencies": ["frontend", "http"],
+  "documentation": "https://github.com/YOURNAME/mytheme",
+  "integration_type": "service",
+  "iot_class": "calculated",
+  "issue_tracker": "https://github.com/YOURNAME/mytheme/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}

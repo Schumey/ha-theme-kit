@@ -1,0 +1,29 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "My Theme",
+        "description": "Welche Designs installiert werden und welche Module laufen. Nach dem Speichern die Seite neu laden (Strg+F5).",
+        "data": {
+          "themes": "Designs",
+          "css": "Schrift, Mauszeiger, Scrollleisten (mytheme.css)"
+        }
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "My Theme ist bereits eingerichtet."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "My Theme",
+        "description": "Welche Designs installiert werden und welche Module laufen. Nach dem Speichern die Seite neu laden (Strg+F5).",
+        "data": {
+          "themes": "Designs",
+          "css": "Schrift, Mauszeiger, Scrollleisten (mytheme.css)"
+        }
+      }
+    }
+  }
+}

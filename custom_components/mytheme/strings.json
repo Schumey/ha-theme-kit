@@ -1,0 +1,29 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "My Theme",
+        "description": "Which themes get installed and which modules run. Reload the page (Ctrl+F5) after saving.",
+        "data": {
+          "themes": "Themes",
+          "css": "Font, cursor, scrollbars (mytheme.css)"
+        }
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "My Theme is already set up."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "My Theme",
+        "description": "Which themes get installed and which modules run. Reload the page (Ctrl+F5) after saving.",
+        "data": {
+          "themes": "Themes",
+          "css": "Font, cursor, scrollbars (mytheme.css)"
+        }
+      }
+    }
+  }
+}

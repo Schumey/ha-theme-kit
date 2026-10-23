@@ -1,0 +1,12 @@
+/* Example block: rules that go into the card's shadow root. Shared by
+   card-mod-card and uix-card-yaml via "@include card", so it exists only once. */
+ha-card {
+  border-radius: var(--mytheme-radius) !important;
+  transition: none !important;
+}
+/* title of cards with a header (h1.card-header inside ha-card) */
+ha-card .card-header {
+  background: var(--mytheme-title);
+  color: var(--mytheme-title-text) !important;
+  font-weight: bold;
+}

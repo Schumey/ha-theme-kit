@@ -1,0 +1,32 @@
+# Test dashboard: one card of each kind. Paste into a dashboard's raw configuration editor,
+# then replace the entity ids with your own.
+title: Theme test
+views:
+  - title: Cards
+    sections:
+      - type: grid
+        cards:
+          - type: heading
+            heading: Heading card
+          - type: tile
+            entity: light.living_room
+          - type: tile
+            entity: climate.living_room
+            features:
+              - type: target-temperature
+          - type: entities
+            title: Entities card
+            entities:
+              - light.living_room
+              - switch.kitchen
+          - type: markdown
+            title: Markdown card
+            content: Some **text** with a [link](https://www.home-assistant.io).
+          - type: history-graph
+            title: History
+            entities:
+              - sensor.temperature
+          - type: thermostat
+            entity: climate.living_room
+          - type: gauge
+            entity: sensor.temperature

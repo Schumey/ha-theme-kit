@@ -1,0 +1,220 @@
+# ------------------------------------------------------------------
+#  My Theme – theme source
+#  Edit this file, then run: python tools/build.py
+#  (one finished file per theme lands in custom_components/mytheme/themes/)
+#
+#  Rules of this file:
+#   - A line "@include name" is replaced by src/blocks/name.css (indented like
+#     the line). Use it for CSS that several keys share.
+#   - A variant is an anchor (&base) plus overridden mytheme-* colors.
+#   - All colors go through the mytheme-* variables below. New rules use them
+#     instead of fixed colors, so every variant follows.
+# ------------------------------------------------------------------
+
+My Theme: &base
+  # ================= Palette (the only values a variant changes) =================
+  mytheme-bg: "#dddddd"            # dashboard / desktop background
+  mytheme-bg-text: "#000000"       # text directly on the background
+  mytheme-face: "#f0f0f0"          # cards, dialogs, buttons
+  mytheme-border: "#808080"        # frames, dividers
+  mytheme-text: "#1a1a1a"
+  mytheme-text-dim: "#505050"
+  mytheme-disabled: "#909090"
+  mytheme-window: "#ffffff"        # text fields, lists
+  mytheme-window-text: "#000000"
+  mytheme-title: "#0055aa"         # title bars / app header
+  mytheme-title-text: "#ffffff"
+  mytheme-select: "#0055aa"        # selection, primary color, "on" switches
+  mytheme-select-text: "#ffffff"
+  mytheme-active: "#d08000"        # icons in the "on" state
+  mytheme-heat: "#d03020"          # climate
+  mytheme-cool: "#2060d0"
+  mytheme-auto: "#208020"
+
+  # ================= Derived values =================
+  mytheme-radius: "4px"
+  mytheme-frame: "inset 0 0 0 1px var(--mytheme-border)"
+  mytheme-font: 'system-ui, "Segoe UI", Roboto, sans-serif'
+
+  # ---------- Font ----------
+  # UIX (8.4.0+) can load web fonts everywhere, also on settings pages:
+  # uix-fonts: |
+  #   my-font:
+  #     family: My Font
+  #     source: url("https://example.com/font.woff2") format("woff2")
+  #     descriptors:
+  #       weight: "400"
+  #       display: swap
+  primary-font-family: var(--mytheme-font)
+  paper-font-common-base_-_font-family: var(--mytheme-font)
+  mdc-typography-font-family: var(--mytheme-font)
+  ha-font-family-body: var(--mytheme-font)
+  ha-font-family-heading: var(--mytheme-font)
+
+  # ---------- Base colors ----------
+  primary-color: var(--mytheme-select)
+  dark-primary-color: var(--mytheme-title)
+  light-primary-color: var(--mytheme-select)
+  accent-color: var(--mytheme-select)
+  primary-text-color: var(--mytheme-text)
+  secondary-text-color: var(--mytheme-text-dim)
+  text-primary-color: var(--mytheme-select-text)
+  disabled-text-color: var(--mytheme-disabled)
+  divider-color: var(--mytheme-border)
+  error-color: "#d02020"
+  warning-color: "#d08000"
+  success-color: "#208020"
+  info-color: "#0055aa"
+  mdc-theme-primary: var(--mytheme-select)
+  mdc-theme-secondary: var(--mytheme-select)
+  mdc-theme-on-primary: var(--mytheme-select-text)
+  # HA derives rgb-* values only from hex colors. A var() needs them spelled out
+  # (same colors as comma separated numbers, change them together with the palette).
+  rgb-primary-color: "0, 85, 170"
+  rgb-accent-color: "0, 85, 170"
+  rgb-primary-text-color: "26, 26, 26"
+  rgb-primary-background-color: "240, 240, 240"
+  rgb-card-background-color: "240, 240, 240"
+
+  # ---------- Backgrounds ----------
+  lovelace-background: var(--mytheme-bg)
+  ha-heading-card-title-color: var(--mytheme-bg-text)
+  ha-heading-card-subtitle-color: var(--mytheme-bg-text)
+  primary-background-color: var(--mytheme-face)
+  secondary-background-color: var(--mytheme-face)
+  card-background-color: var(--mytheme-face)
+  clear-background-color: var(--mytheme-face)
+  mdc-theme-surface: var(--mytheme-face)
+
+  # ---------- Cards and shapes ----------
+  ha-card-background: var(--mytheme-face)
+  ha-card-border-radius: var(--mytheme-radius)
+  ha-card-border-width: "0px"
+  ha-card-box-shadow: var(--mytheme-frame)
+  ha-card-header-color: var(--mytheme-text)
+  ha-dialog-border-radius: var(--mytheme-radius)
+  ha-button-border-radius: var(--mytheme-radius)
+  ha-control-border-radius: var(--mytheme-radius)
+  tile-card-border-radius: var(--mytheme-radius)
+  ha-border-radius-sm: var(--mytheme-radius)
+  ha-border-radius-md: var(--mytheme-radius)
+  ha-border-radius-lg: var(--mytheme-radius)
+  ha-border-radius-xl: var(--mytheme-radius)
+
+  # ---------- Header and sidebar ----------
+  header-height: "48px"
+  app-header-background-color: var(--mytheme-title)
+  app-header-text-color: var(--mytheme-title-text)
+  app-header-selection-bar-color: var(--mytheme-title-text)
+  sidebar-background-color: var(--mytheme-face)
+  sidebar-menu-button-background-color: var(--mytheme-face)
+  sidebar-text-color: var(--mytheme-text)
+  sidebar-icon-color: var(--mytheme-text)
+  sidebar-selected-background-color: var(--mytheme-select)
+  sidebar-selected-text-color: var(--mytheme-select-text)
+  sidebar-selected-icon-color: var(--mytheme-select-text)
+
+  # ---------- Icons and states ----------
+  state-icon-color: var(--mytheme-select)
+  state-icon-active-color: var(--mytheme-active)
+  state-on-color: "#208020"
+  state-off-color: var(--mytheme-disabled)
+  state-active-color: var(--mytheme-select)
+  state-inactive-color: var(--mytheme-disabled)
+  paper-item-icon-color: var(--mytheme-select)
+  paper-item-icon-active-color: var(--mytheme-active)
+
+  # ---------- Climate (ring, icons, tiles, history) ----------
+  state-climate-heat-color: var(--mytheme-heat)
+  state-climate-cool-color: var(--mytheme-cool)
+  state-climate-auto-color: var(--mytheme-auto)
+
+  # ---------- Switch (ha-switch, HA 2025.10+) ----------
+  ha-switch-background-color: var(--mytheme-window)
+  ha-switch-border-color: var(--mytheme-border)
+  ha-switch-thumb-background-color: var(--mytheme-face)
+  ha-switch-checked-background-color: var(--mytheme-select)
+  ha-switch-checked-thumb-background-color: var(--mytheme-face)
+
+  # ---------- Slider (ha-slider) ----------
+  ha-slider-track-color: var(--mytheme-window)
+  ha-slider-indicator-color: var(--mytheme-select)
+  ha-slider-thumb-color: var(--mytheme-face)
+
+  # ---------- Input fields ----------
+  ha-color-form-background: var(--mytheme-window)
+  input-fill-color: var(--mytheme-window)
+  input-ink-color: var(--mytheme-window-text)
+  mdc-text-field-fill-color: var(--mytheme-window)
+  mdc-text-field-ink-color: var(--mytheme-window-text)
+  code-editor-background-color: var(--mytheme-window)
+
+  # ---------- Tables and charts ----------
+  data-table-background-color: var(--mytheme-window)
+  table-header-background-color: var(--mytheme-face)
+  graph-color-1: "#0055aa"
+  graph-color-2: "#d03020"
+  graph-color-3: "#208020"
+  graph-color-4: "#d08000"
+  graph-color-5: "#802080"
+  graph-color-6: "#008080"
+
+  # ==================================================================
+  #  Optional: UIX / card-mod (HACS). Without them this part is ignored.
+  #  Use the simple card-mod-* keys for the basic look. Do NOT add
+  #  card-mod-…-yaml keys: card-mod 4.2.1 freezes the UI with them (HA 2026.8+).
+  #  UIX reads uix-*-yaml first. See docs/frontend-pitfalls.md for the paths.
+  # ==================================================================
+  card-mod-theme: My Theme
+
+  card-mod-card: |
+    @include card
+
+  uix-card-yaml: |
+    .: |
+      @include card
+
+# ---------- Variant: same structure, other colors ----------
+My Theme Night:
+  <<: *base
+  card-mod-theme: My Theme Night
+  mytheme-bg: "#101820"
+  mytheme-bg-text: "#e0e0e0"
+  mytheme-face: "#222c36"
+  mytheme-border: "#4a5866"
+  mytheme-text: "#e8e8e8"
+  mytheme-text-dim: "#a8b0b8"
+  mytheme-disabled: "#6a7480"
+  mytheme-window: "#141c24"
+  mytheme-window-text: "#e8e8e8"
+  mytheme-title: "#1c3a5a"
+  mytheme-select: "#3a8ad8"
+  mytheme-active: "#f0b030"
+  rgb-primary-color: "58, 138, 216"
+  rgb-accent-color: "58, 138, 216"
+  rgb-primary-text-color: "232, 232, 232"
+  rgb-primary-background-color: "34, 44, 54"
+  rgb-card-background-color: "34, 44, 54"
+
+# ---------- Variant that follows Profile → Theme → Mode (light/dark) ----------
+My Theme Auto:
+  <<: *base
+  card-mod-theme: My Theme Auto
+  modes:
+    light: {}
+    dark:
+      mytheme-bg: "#101820"
+      mytheme-bg-text: "#e0e0e0"
+      mytheme-face: "#222c36"
+      mytheme-border: "#4a5866"
+      mytheme-text: "#e8e8e8"
+      mytheme-text-dim: "#a8b0b8"
+      mytheme-window: "#141c24"
+      mytheme-window-text: "#e8e8e8"
+      mytheme-title: "#1c3a5a"
+      mytheme-select: "#3a8ad8"
+      rgb-primary-color: "58, 138, 216"
+      rgb-accent-color: "58, 138, 216"
+      rgb-primary-text-color: "232, 232, 232"
+      rgb-primary-background-color: "34, 44, 54"
+      rgb-card-background-color: "34, 44, 54"
