@@ -1,6 +1,6 @@
 /*
  * My Theme – loads mytheme.css (font, cursor, scrollbars)
- * Version: 0.1.0
+ * Version: 0.2.0
  *
  * Registered as a frontend script by the integration; the stylesheet lies next to it.
  */

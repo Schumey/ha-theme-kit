@@ -25,7 +25,7 @@ It replaces `mytheme` / `My Theme` / `YOURNAME` everywhere, renames files and fo
 | `tools/init.py` | One-time rename of the template. |
 | `custom_components/<domain>/` | The integration. `__init__.py` copies the chosen themes to `/config/themes/<domain>/`, serves `www/` under `/<domain>/`, registers modules with `add_extra_js_url(...?v=<manifest version>)`. `config_flow.py` is the options UI. `const.py` lists modules and defaults. |
 | `custom_components/<domain>/www/` | Optional JS/CSS (font, cursor, scrollbars, anything variables cannot do). |
-| `docs/` | `workflow.md` (live tuning in a browser), `frontend-pitfalls.md` (HA/UIX/card-mod knowledge), `ideas.md` (design briefs), `publishing.md` (HACS, releases). |
+| `docs/` | `workflow.md` (live tuning in a browser), `frontend-pitfalls.md` (HA/UIX/card-mod knowledge), `integration-patterns.md` (modules and options, user files that are never overwritten, talking to HA from a module, fixed bars), `ideas.md` (design briefs), `publishing.md` (HACS, releases). |
 
 Generated files (`custom_components/*/themes/*.yaml`) are overwritten by `build.py`. Never edit them by hand; run `python tools/build.py` after every change to `src/`.
 
@@ -57,3 +57,7 @@ HA wording: German UI says „Werkzeuge → YAML → **Designs** neu laden“ an
 - UIX paths: spaces separate steps, no `>` and no `:scope`; middle steps take only the **first** element; `$` enters the shadow root of all hits, `$$` searches through all shadow roots. Paths start at the parent of the `uix-node`. Use `uix_style_path(element)` and `uix_tree(element)` in the browser console to find the path.
 - A theme variable has no effect when the component sets it itself in `:host` (e.g. `--control-slider-*`). Then UIX on that element is needed.
 - Never use `shadowRoot.querySelector(":scope > …")` inside a MutationObserver: it matches nothing and led to an endless loop that froze the UI.
+- `ha-icon` is sized with `--mdc-icon-size`, not `--mdi-icon-size`.
+- Components often set `width: 100%` themselves (media card `.background`, `ha-slider`), which defeats `inset` and negative margins: override with `width: auto !important`.
+- The integration must never overwrite a file the user edits (menus, lists). Ship a default, copy it only if missing, and offer a one-shot merge in the options dialog for new entries (see `docs/integration-patterns.md`).
+- Several sessions or PCs touch the same folder: commit with explicit paths, and after `git pull --rebase --autostash` look for conflict markers in generated or version-line files (`<<<<<<<`) before running `build.py`.

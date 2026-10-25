@@ -10,7 +10,7 @@ Du willst Amiga Workbench, Windows XP, System 7 oder einen ganz eigenen Look? **
 
 - **Theme-Quelle + Generator**: eine YAML-Datei mit Farbpalette als Variablen, Varianten als Anker und `@include` für gemeinsame CSS-Bausteine. `python tools/build.py` schreibt je Theme eine fertige Datei.
 - **Fertige HACS-Integration** (`custom_components/<domain>/`): installiert die gewählten Themes nach `/config/themes/`, stellt JS/CSS bereit und hat eine Optionsseite.
-- **`CLAUDE.md` und `docs/`**: was wir über das HA-Frontend, UIX/card-mod, Live-Abstimmung im Browser und den Release-Ablauf gelernt haben (englisch), damit Claude es nicht neu herausfinden muss.
+- **`CLAUDE.md` und `docs/`**: was wir über das HA-Frontend, UIX/card-mod, Live-Abstimmung im Browser und den Release-Ablauf gelernt haben (englisch), damit Claude es nicht neu herausfinden muss. Neu: [Integrations-Muster](docs/integration-patterns.md) (Module und Optionen, Nutzerdateien, die nie überschrieben werden, mit HA aus einem Modul reden, feste Leisten am Seitenrand).
 - **Design-Vorlagen** für Amiga und Windows XP in [docs/ideas.md](docs/ideas.md).
 
 ## Schnellstart

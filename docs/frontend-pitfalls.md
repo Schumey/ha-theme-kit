@@ -48,7 +48,17 @@ Plain theme keys work everywhere (also Companion app, no extra install). Start w
 | Bottom sheet (phones) | `ha-adaptive-dialog` uses `ha-bottom-sheet` instead of `ha-dialog`. Header is `ha-dialog-header` in the sheet's light DOM (`"$ ha-dialog-header $"`), the drag handle `.handle-wrapper` is in `"$ ha-bottom-sheet $"` (absolute at the top, covers the title otherwise). |
 | Card titles | `ha-card` draws the `header` as `h1.card-header` in its own shadow root: path `"ha-card $"` |
 | Header buttons | in `hui-root` under `.action-items`; one sits in an `ha-dropdown` and is smaller without fixed sizes |
+| Sidebar menu button | `ha-sidebar $ .menu ha-icon-button` is 48 px in a 36 px header: set `--ha-icon-button-size` (e.g. 28px) on it |
+| Media card | `hui-media-control-card` has class `type-media-control`; its shadow root has `.background` (video area, `inset` is ignored because HA sets `width: 100%`: use `width: auto !important`), `.player`, `.controls` with `.start` / `.end`, `.more-info`, and `ha-slider` (also `width: 100%`: use `width: auto !important; align-self: stretch` when it should reach past negative margins) |
 | Settings pages | app bar `ha-top-app-bar-fixed`, icons in `ha-config-navigation-list` (`.icon-background`) |
+
+## Icons
+
+`ha-icon` takes its size from `--mdc-icon-size`. `--mdi-icon-size` (the variable `ha-svg-icon` reads) does not reach through, and `width`/`height` on `ha-icon` are ignored, so an icon stays 24 px.
+
+## Fixed bars and layout
+
+See [integration-patterns.md](integration-patterns.md#a-fixed-bar-at-the-edge-of-the-page-taskbar-dock): the page scrolls with the document, the sidebar is fixed at `100vh`, popovers cover a bar.
 
 ## Touch
 
