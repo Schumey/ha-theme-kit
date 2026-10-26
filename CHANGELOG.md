@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.0
+
+- Docs synced with HomeAssistant95 4.10.4: dialog frame as an overlay (`::after`) instead of an inset `box-shadow`, so footers with their own background no longer hide the bottom edge.
+
 ## 0.3.0
 
 - Docs synced with HomeAssistant95 4.10.3: fixed bars must not use a fixed page height on narrow layouts (page could not be scrolled in the Companion app); picker `.clear` margin; `ha-panel-app` header (UIX type `app`).
