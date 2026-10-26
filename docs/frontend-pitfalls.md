@@ -33,7 +33,8 @@ Plain theme keys work everywhere (also Companion app, no extra install). Start w
 
 | Thing | Where |
 |---|---|
-| Select field | `ha-select` → `ha-picker-field` → `ha-combo-box-item` (label in `data-aria-label`) |
+| Select field | `ha-select` → `ha-picker-field` → `ha-combo-box-item` (label in `data-aria-label`). The theme picker on the profile page is `ha-theme-picker` → `ha-generic-picker` → `ha-picker-field`. Its clear button `.clear` has `margin: 0 -8px`, which pushes it under a custom `.arrow`: reset with `margin: 0 !important`. |
+| Add-on / app page | `ha-panel-app` (UIX type `app`, `uix-app-yaml`): shadow root with `div.header` (`ha-icon-button` 48×48, `.main-title`) and the `iframe`. Unstyled by themes unless you style it. |
 | Date/time | `ha-date-input` / `ha-base-time-input` with `ha-input` → `wa-input` (parts `base`, `label`, `input`, `hint`) |
 | Switch | `ha-switch` (Web Awesome), parts `control`, `thumb` |
 | Slider | `ha-slider`, parts `track`, `indicator`, `thumb` |

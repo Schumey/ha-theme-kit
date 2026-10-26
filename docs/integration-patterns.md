@@ -39,4 +39,5 @@ A theme project often wants a user-editable file (a menu, a list of favorites). 
 - The sidebar is `position: fixed` at `100vh`: add `ha-sidebar { height: calc(100vh - <bar> ) !important; max-height: calc(100dvh - <bar>) !important }` in the shadow root of `home-assistant-main`. It appears late, so retry for ~20 s.
 - Popovers (menus) are in the top layer and cover the bar. Clamp their position to `innerHeight - barHeight - menuHeight` or they hang over it.
 - Dialogs sit above the bar by themselves; give the bar a low `z-index`. Toasts hang a few pixels over it.
-- Do not shrink `home-assistant` with `position: fixed; inset`: the page then loses its scrolling.
+- Do not shrink `home-assistant` with `position: fixed; inset` or a fixed `height` everywhere: on a phone (narrow layout, Companion app) the page then ends at window height and can no longer be scrolled.
+- Panels that need a definite height (iframe, add-on and custom panels, `hass.panels[hass.panelUrl].component_name` is `iframe`, `custom` or `app`) and wide windows (> 870 px, inner scrolling) are the exception: switch a class on `<html>` and give `home-assistant` `height: calc(100dvh - <bar>); contain: layout` only then. `contain: layout` also keeps `position: fixed` buttons above the bar.

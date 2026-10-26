@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.0
+
+- Docs synced with HomeAssistant95 4.10.3: fixed bars must not use a fixed page height on narrow layouts (page could not be scrolled in the Companion app); picker `.clear` margin; `ha-panel-app` header (UIX type `app`).
+
 ## 0.2.0
 
 - Docs synced with HomeAssistant95 4.10.0: new `docs/integration-patterns.md` (modules and options, user files the integration never overwrites with a merge switch, events and calls for talking to HA, fixed bars at the page edge).
