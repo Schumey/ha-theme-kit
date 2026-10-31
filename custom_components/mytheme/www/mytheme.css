@@ -1,6 +1,6 @@
 /*
  * My Theme – extras that theme variables cannot do
- * Version: 0.4.0
+ * Version: 0.5.0
  * Loaded through mytheme-css.js (option of the integration).
  *
  * Put here: @font-face, mouse cursor, scrollbars, ::selection.
@@ -9,6 +9,11 @@
 
 html {
   scrollbar-color: var(--mytheme-face, #cccccc) var(--mytheme-bg, #eeeeee);
+}
+
+/* HA sets Roboto on body; dialogs sit above the app and inherit it instead of the theme font */
+body {
+  font-family: var(--ha-font-family-body, Roboto, Noto, sans-serif);
 }
 
 ::selection {

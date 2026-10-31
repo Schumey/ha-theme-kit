@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.5.0
+
+- `mytheme-css.js` passes its `?v=` on to `mytheme.css`. Before, browsers kept the old stylesheet after an update.
+- `mytheme.css` sets the theme font on `body`: HA sets Roboto there, and dialogs inherited it.
+- Docs synced with HomeAssistantXP 1.5.7:
+  - `integration-patterns.md`: a fixed bar must never give dashboards a fixed page height (they scroll the document at every width); pages with `ha-top-app-bar-fixed` and a bar height variable.
+  - `frontend-pitfalls.md`: UIX selector lists, `.` in `uix-config-yaml`, unstyled dialogs during the opening animation, `!important` across shadow boundaries and passing values down as custom properties; frontend map for body font, text fields, buttons and toggle groups, settings and other tab bars (with a base line), editors, dialogs with their own header, more-info back button, tile mode bars and number buttons, MapLibre map, logbook, media bar, iframe panels, timeflow card; module stylesheets and per-component stylesheets.
+  - `CLAUDE.md`: three new key facts; `ideas.md` points to HomeAssistantXP.
+
 ## 0.4.0
 
 - Docs synced with HomeAssistant95 4.10.4: dialog frame as an overlay (`::after`) instead of an inset `box-shadow`, so footers with their own background no longer hide the bottom edge.

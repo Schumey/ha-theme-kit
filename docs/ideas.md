@@ -34,6 +34,8 @@ Look: rounded 3–8 px corners, title bar with gradient, light gray-beige window
 
 Plan: title bar gradient in `--xp-title` (a `linear-gradient` can be a theme variable), `border-radius: 8px 8px 0 0` on `ha-card .card-header`, round close button in the card header via UIX, start-menu-like sidebar (green top, blue body) using the `sidebar-*` variables and `uix-drawer-yaml`, variants: *Luna Blue*, *Olive Green*, *Silver*, *Royale Noir*.
 
+Built: [HomeAssistantXP](https://github.com/Schumey/HomeAssistantXP) is this brief made from the kit; read its `src/` and `www/xp-panels.js` for working rules.
+
 ## Others people ask for
 
 macOS Classic (System 7), BeOS, Windows 3.1 / 98 (already done in HomeAssistant95), NeXTSTEP, GEM/Atari ST, C64 / retro terminal green-on-black, Material You palettes.
